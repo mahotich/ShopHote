@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    @@include('./pages/_header.html')
+    <main class="shop-content">
+      <div class="container">
+        <section>
+          <div class="shop-col-box">
+            <aside class="shop-item-filter">
+              <h2 class="item-content-h">Фильтры</h2>
+              <p class="close-filter">╳</p>
+              <div class="shop-filter" id="App">
+                <div>
+                  <div @click="show_cen = !show_cen" class="shop-border">
+                    <h3>Цена</h3>
+                    <p class="shop-filter__ar">
+                      <transition name="no-mode-fade">
+                        <b v-if="on_cen" key="on_cen" @click="on_cen = false">
+                          {{counter}}
+                        </b>
+                        <b v-else key="off" @click="on_cen = true">
+                          {{counter_o}}
+                        </b>
+                      </transition>
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <div @click="show_kat = !show_kat" class="shop-border">
+                    <h3>Категории</h3>
+                    <p class="shop-filter__ar">
+                      <transition name="no-mode-fade">
+                        <b v-if="on_kat" key="on_kat" @click="on_kat = false">
+                          {{counter}}
+                        </b>
+                        <b v-else key="off" @click="on_kat = true">
+                          {{counter_o}}
+                        </b>
+                      </transition>
+                    </p>
+                  </div>
+                  <transition name="fade">
+                    <div v-if="show_kat" class="shop-filter-menu">
+                      <ul>
+                        <li>Светильники</li>
+                        <li>Мелкая мебель</li>
+                        <li>Крупная мебель</li>
+                        <li class="filte__active">Популярное</li>
+                      </ul>
+                    </div>
+                  </transition>
+                </div>
+
+                <div>
+                  <div @click="show_mat = !show_mat" class="shop-border">
+                    <h3>Материалы</h3>
+                    <p class="shop-filter__ar">
+                      <transition name="no-mode-fade">
+                        <b v-if="on_mat" key="on_mat" @click="on_mat = false">
+                          {{counter}}
+                        </b>
+                        <b v-else key="off" @click="on_mat = true">
+                          {{counter_o}}
+                        </b>
+                      </transition>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="popular__box_item popular__box_active popular-filter-box"
+              >
+                <h3>Новые табуреты</h3>
+                <img
+                  class="popular_img popular_img-new"
+                  src="./img/chair-best-bambuk.png"
+                  alt="Cnek"
+                />
+                <button class="btn-color btn-filter-pop">Подробнее</button>
+              </div>
+            </aside>
+
+            <div class="shop__content-box">
+              <h2 class="item-content-h btn-filter-open">Фильтры</h2>
+              <div class="shop-menu-content">
+                <button class="shop-perform">
+                  Сначала популярное<span><b>&#5171;</b></span>
+                </button>
+              </div>
+              <div class="shop-tovar-box">
+                <div class="popular__box_item box-conteainer shop-item">
+                  <a href="./tovar.html">
+                    <div class="goods__hover">
+                      <img src="./img/bytesize_heart.svg" alt="" />
+                      <img src="./img/simple-line-icons_basket.svg" alt="" />
+                    </div>
+                    <img src="./img/lamp-shop.jpg" alt="Белая лампа" />
+                    <h3>Белая лампа</h3>
+                    <p>$512</p>
+                  </a>
+                </div>
+                <div class="popular__box_item box-conteainer shop-item">
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img
+                    src="./img/chair-best-bambuk.png"
+                    alt="Деревянный стул"
+                  />
+                  <h3>Деревянный стул</h3>
+                  <p>$578</p>
+                </div>
+                <div class="popular__box_item box-conteainer shop-item">
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/lamp-shop-black.png" alt="Черная лампа" />
+                  <h3>Черная лампа</h3>
+                  <p>$655</p>
+                </div>
+                <div class="popular__box_item box-conteainer shop-item">
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/table-shop-bl.jpg" alt="Белая табуретка" />
+                  <h3>Белая табуретка</h3>
+                  <p>$876</p>
+                </div>
+                <div class="popular__box_item box-conteainer shop-item">
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/lamp-best.png" alt="Черная лампа" />
+                  <h3>Черная лампа</h3>
+                  <p>$545</p>
+                </div>
+                <div class="popular__box_item box-conteainer shop-item">
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/radio_1.png" alt="Радио" />
+                  <h3>Радио</h3>
+                  <p>$718</p>
+                </div>
+                <div class="popular__box_item box-conteainer shop-item">
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/table-sop.png" alt="Стул Про" />
+                  <h3>Стул Про</h3>
+                  <p>$578</p>
+                </div>
+                <div class="popular__box_item box-conteainer shop-item">
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/chair-best.png" alt="Белый стул" />
+                  <h3>Белый стул</h3>
+                  <p>$456</p>
+                </div>
+                <div
+                  class="popular__box_item box-conteainer shop-item box-sop-hidden"
+                >
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/lamp-shop.jpg" alt="Белая лампа" />
+                  <h3>Белая лампа</h3>
+                  <p>$519</p>
+                </div>
+                <div
+                  class="popular__box_item box-conteainer shop-item box-sop-hidden"
+                >
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/table-best.png" alt="Стол Фрог" />
+                  <h3>Стол Фрог</h3>
+                  <p>$812</p>
+                </div>
+                <div
+                  class="popular__box_item box-conteainer shop-item box-sop-hidden"
+                >
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/lamp-shop-black.png" alt="Черная лампа" />
+                  <h3>Черная лампа</h3>
+                  <p>$712</p>
+                </div>
+                <div
+                  class="popular__box_item box-conteainer shop-item box-sop-hidden"
+                >
+                  <div class="goods__hover">
+                    <img src="./img/bytesize_heart.svg" alt="" />
+                    <img src="./img/simple-line-icons_basket.svg" alt="" />
+                  </div>
+                  <img src="./img/radio_1.png" alt="Радио Биг" />
+                  <h3>Радио Биг</h3>
+                  <p>$582</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shop-page">
+            <button class="btn btn-shop-smell">Показать еще</button>
+            <button class="shop-page-btn">1</button>
+            <button class="shop-page-btn shop-btn-active">2</button>
+            <button class="shop-page-btn">3</button>
+            <button class="shop-page-btn">4</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    @@include('./pages/_footer.html')
+    <script src="./libs/vue-libs.js"></script>
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>

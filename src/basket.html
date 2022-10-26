@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      @@include('./pages/_header.html')
+      <section class="basket" id="basketVue">
+        <div class="container-basket">
+          <h2>Корзина</h2>
+          <div class="basket-box">
+            <div class="basket-box-item">
+              <p class="cencel">Отменить x</p>
+              <img src="./img/lamp-best.png" alt="Черная лампа" />
+              <h3>Черная лампа</h3>
+              <p class="p-class-basket">{{priceTovar}}$</p>
+              <div class="btn-count">
+                <button @click="count -= 1">-</button>
+                <p>{{count}}</p>
+                <button @click="count += 1">+</button>
+              </div>
+              <p>{{sumTovar1=count*priceTovar}} $</p>
+            </div>
+
+            <div class="basket-box-item">
+              <p class="cencel">Отменить x</p>
+              <img src="./img/lamp-shop.jpg" alt="Белая лампа" />
+              <h3>Белая лампа</h3>
+              <p class="p-class-basket">519$</p>
+              <div class="btn-count">
+                <button>-</button>
+                <p>1</p>
+                <button>+</button>
+              </div>
+              <p>519$</p>
+            </div>
+          </div>
+          <a href="./shop.html"
+            ><button class="btn-count btn-count-next">
+              Продолжить покупки
+            </button></a
+          >
+          <div class="basket-payment">
+            <p>К оплате: {{sumTovar1}}$</p>
+            <button class="btn" @click="byeOpen">Оплатить</button>
+          </div>
+        </div>
+      </section>
+      @@include('./pages/_footer.html')
+    </main>
+    <script src="./libs/vue-libs.js"></script>
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>

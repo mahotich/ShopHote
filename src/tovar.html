@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      @@include('./pages/_header.html')
+      <section class="tovar">
+        <div class="container">
+          <div class="tovar-img">
+            <img class="tovar-img_item" src="./img/lamp-best.png" alt="" />
+          </div>
+          <div class="tovar-content">
+            <div class="tovar-content_img">
+              <div class="tovar-content_img-items">
+                <img class="tovat-item-1" src="./img/lamp-best.png" alt="" />
+              </div>
+              <div class="tovar-content_img-items">
+                <img class="tovat-item-2" src="./img/lamp-crop-up.jpg" alt="" />
+              </div>
+              <div class="tovar-content_img-items">
+                <img class="tovat-item-3" src="./img/lamp-best.png" alt="" />
+              </div>
+              <div class="tovar-content_img-items">
+                <img
+                  class="tovat-item-4"
+                  src="./img/lamp-crop-down.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="tovar-content_text">
+              <div class="tovar-content_text-items">
+                <h3>Черная лампа</h3>
+                <p class="price">$545</p>
+                <button class="btn btn-tovar-pos">Купить</button>
+              </div>
+              <p>
+                Для современного мира курс на социально-ориентированный
+                национальный проект является качественно новой ступенью системы
+                обучения кадров, соответствующей насущным потребностям.
+              </p>
+              <div class="tovar-content_text-contact">
+                <a href="#">Оплата и доставка</a>
+                <a href="#">Пользовательское соглашение</a>
+              </div>
+            </div>
+          </div>
+          <div class="about_product" id="menuTovarVue">
+            <div class="about_product_menu">
+              <p @click="showMenu">Характеристики</p>
+              <p @click="showMenuOt">Отзывы</p>
+            </div>
+            <transition name="slide-fade" v-show="showMenuVisuble">
+              <div class="about_product-content1">
+                Для современного мира курс на социально-ориентированный
+                национальный проект является качественно новой ступенью системы
+                обучения кадров, соответствующей насущным потребностям,
+                качественно новой ступенью системы обучения кадров,
+                соответствующей насущным потребностям.
+              </div>
+            </transition>
+            <transition name="slide-fade" v-show="showMenuOtVisuble">
+              <div class="about_product-content2">
+                <div class="about_product-content2_massege">
+                  <div class="massege-item">
+                    <div class="massege-item-img">
+                      <img src="./img/recall1.jpg" alt="" />
+                    </div>
+                    <div class="massege-item-text">
+                      <h3>Екатерина</h3>
+                      <p>
+                        Для бучения кадров, соответствующей насущным системы
+                        обучения кадров, насущным потребностям.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="massege-item massage-item-none">
+                    <div class="massege-item-img">
+                      <img src="./img/recall2.jpg" alt="" />
+                    </div>
+                    <div class="massege-item-text">
+                      <h3>Любовь</h3>
+                      <p>
+                        Для бучения кадров, соответствующей насущным
+                        потребностям, качественно новой ступенью .
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="massege-item massage-item-none">
+                    <div class="massege-item-img">
+                      <img src="./img/recall3.jpg" alt="" />
+                    </div>
+                    <div class="massege-item-text">
+                      <h3>Петр</h3>
+                      <p>
+                        Для бучения кадров, соответствующей насущным
+                        потребностям, качественно новой ступенью системы
+                        обучения кадров, насущным потребностям.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="massege-item massage-item-none">
+                    <div class="massege-item-img">
+                      <img src="./img/recall4.jpg" alt="" />
+                    </div>
+                    <div class="massege-item-text">
+                      <h3>Елена</h3>
+                      <p>
+                        Для бучения кадров, соответствующей насущным
+                        потребностям, качественно новой ступенью обучения
+                        кадров, насущным потребностям.
+                      </p>
+                    </div>
+                  </div>
+                  <p class="massage-item-none">Еще отзывы</p>
+                </div>
+                <div class="about_product-content2-form">
+                  <form action="" class="footer_form tovar-form-smell">
+                    <div class="tovar-form-flex">
+                      <div>
+                        <label for="tovat-t">Ваше имя *</label>
+                        <input
+                          type="text"
+                          class="tovar-form-name"
+                          id="tovat-t"
+                        />
+                      </div>
+                      <div class="tovat-btn-box">
+                        <label for="tobar-b"> Добавить фото</label>
+                        <button class="tovar-form-btn" id="tobar-b">
+                          Добавить
+                        </button>
+                      </div>
+                    </div>
+                    <div class="tovat-textar">
+                      <label for="tovat-teextar"> Отзыв</label>
+                      <textarea
+                        class="tovat-textar-item"
+                        name=""
+                        id="tovat-teextar"
+                        cols="30"
+                        rows="10"
+                      ></textarea>
+                      <p>Обязательно к заполнению*</p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </transition>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="best-tovars_tovar">@@include('./pages/_besttovar.html')</div>
+    @@include('./pages/_footer.html')
+    <script src="./libs/vue-libs.js"></script>
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>
